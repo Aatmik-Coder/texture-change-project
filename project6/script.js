@@ -33,7 +33,7 @@ import {Ray} from './js/render/math/ray.js';
       // Having a really simple drop shadow underneath an object helps ground
       // it in the world without adding much complexity.
       let shadow = new DropShadowNode();
-      vec3.set(shadow.scale, 0.15, 0.15, 0.15);
+      vec3.set(shadow.scale, 0.05, 0.05, 0.05);
       arObject.addNode(shadow);
 
       const MAX_FLOWERS = 30;
