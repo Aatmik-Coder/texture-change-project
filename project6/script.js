@@ -23,8 +23,7 @@ import {Ray} from './js/render/math/ray.js';
       arObject.visible = false;
       scene.addNode(arObject);
 
-      let flower = new Gltf2Node({url: 'tree.gltf'});
-      vec3.set(flower.scale, 0.05, 0.05, 0.05);
+      let flower = new Gltf2Node({url: 'monk/scene.gltf'});
       arObject.addNode(flower);
 
       let reticle = new Gltf2Node({url: 'reticle/reticle.gltf'});
