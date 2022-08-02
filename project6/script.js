@@ -1,11 +1,11 @@
-import {WebXRButton} from 'js/util/webxr-button.js';
-      import {Scene} from 'js/render/scenes/scene.js';
-      import {Renderer, createWebGLContext} from 'js/render/core/renderer.js';
-      import {Node} from 'js/render/core/node.js';
-      import {Gltf2Node} from 'js/render/nodes/gltf2.js';
-      import {DropShadowNode} from './js/render/nodes/drop-shadow.js';
-      import {vec3} from 'js/render/math/gl-matrix.js';
-      import {Ray} from 'js/render/math/ray.js';
+import {WebXRButton} from './js/util/webxr-button.js';
+import {Scene} from './js/render/scenes/scene.js';
+import {Renderer, createWebGLContext} from './js/render/core/renderer.js';
+import {Node} from './js/render/core/node.js';
+import {Gltf2Node} from './js/render/nodes/gltf2.js';
+import {DropShadowNode} from './js/render/nodes/drop-shadow.js';
+import {vec3} from './js/render/math/gl-matrix.js';
+import {Ray} from './js/render/math/ray.js';
 
       // XR globals.
       let xrButton = null;
