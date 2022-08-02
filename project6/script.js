@@ -23,7 +23,7 @@ import {Ray} from './js/render/math/ray.js';
       arObject.visible = false;
       scene.addNode(arObject);
 
-      let flower = new Gltf2Node({url: 'flower/scene.gltf'});
+      let flower = new Gltf2Node({url: 'couldron/scene.gltf'});
       arObject.addNode(flower);
 
       let reticle = new Gltf2Node({url: 'reticle/reticle.gltf'});
