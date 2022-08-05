@@ -24,7 +24,7 @@ import {Ray} from './js/render/math/ray.js';
       scene.addNode(arObject);
 
       let flower = new Gltf2Node({url: 'chair1.gltf'});
-      vec3.set(flower.scale, 1, 1, 1);
+      vec3.set(flower.scale, 0.5, 0.5, 0.5);
       arObject.addNode(flower);
 
       let reticle = new Gltf2Node({url: 'reticle/reticle.gltf'});
@@ -37,7 +37,7 @@ import {Ray} from './js/render/math/ray.js';
       vec3.set(shadow.scale, 0.05, 0.05, 0.05);
       arObject.addNode(shadow);
 
-      const MAX_FLOWERS = 30;
+      const MAX_FLOWERS = 1;
       let flowers = [];
 
       // Ensure the background is transparent for AR.
