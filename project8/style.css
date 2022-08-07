@@ -1,81 +1,124 @@
-body {
-    background-color: #F0F0F0;
-    font: 1rem/1.4 -apple-system, BlinkMacSystemFont,
-      Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans,
-      Droid Sans, Helvetica Neue, sans-serif;
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined) > * {
+    display: none;
   }
-  
-  header {
-    position: relative;
-    z-index: 2;
-    left: 0px;
-    text-align: left;
-    max-width: 420px;
-    padding: 0.5em;
-    background-color: rgba(255, 255, 255, 0.90);
-    margin-bottom: 0.5em;
-    border-radius: 2px;
+
+  model-viewer {
+    background-color: #eee;
+    overflow-x: hidden;
+    --poster-color: #eee;
   }
-  
-  details summary {
-    font-size: 1.0em;
-    font-weight: bold;
-  }
-  
-  details[open] summary {
-    font-size: 1.4em;
-    font-weight: bold;
-  }
-  
-  header h1 {
-    margin-top: 0px;
-  }
-  
-  canvas {
+
+  #ar-button {
+    
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 12px 50%;
+    background-color: #fff;
     position: absolute;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    touch-action: none;
-  }
-  
-  .back {
-    float: right;
-    text-decoration: none;
-  }
-  
-  .back:hover {
-    text-decoration: underline;
-  }
-  
-  .back::before {
-    display: inline-block;
-    content: attr(data-index) '<';
-    font-weight: bold;
+    left: 50%;
+    transform: translateX(-50%);
     white-space: nowrap;
-    margin-right: 0.2em;
-    margin-left: 0.2em;
+    bottom: 132px;
+    padding: 0px 16px 0px 40px;
+    font-family: Roboto Regular, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    color:#4285f4;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px;
+    border: 1px solid #DADCE0;
   }
-  
-  /* Used for the 'barebones' samples */
-  .barebones-button {
-    font-family: "Karla", sans-serif;
-    border: rgb(80, 168, 252) 2px solid;
-    border-radius: 2px;
-    box-sizing: border-box;
-    background: none;
-    height: 55px;
-    min-width: 176px;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    font-size: 18px;
-    color: rgb(80, 168, 252);
-    background-color: rgba(255, 255, 255, 0.7);
+
+  #ar-button:active {
+    background-color: #E8EAED;
+  }
+
+  #ar-button:focus {
+    outline: none;
+  }
+
+  #ar-button:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+  @keyframes circle {
+    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+  }
+
+  @keyframes elongate {
+    from { transform: translateX(100px); }
+    to   { transform: translateX(-100px); }
+  }
+
+  model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 175px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+  }
+
+  model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+  }
+
+  model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+  }
+
+  model-viewer > #ar-failure {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 175px;
+    display: none;
+  }
+
+  model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+    display: block;
+  }
+
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 16px;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+  }
+
+  .slide.selected {
+    border: 2px solid #4285f4;
+  }
+
+  .slide:focus {
+    outline: none;
+  }
+
+  .slide:focus-visible {
+    outline: 1px solid #4285f4;
   }
