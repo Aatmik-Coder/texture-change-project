@@ -24,7 +24,7 @@ import {Ray} from './js/render/math/ray.js';
       scene.addNode(arObject);
 
       let flower = new Gltf2Node({url: 'untitled.glb'});
-      vec3.set(flower.scale, 1, 1, 1);
+      vec3.set(flower.scale, 5, 5, 5);
       arObject.addNode(flower);
 
       let reticle = new Gltf2Node({url: 'reticle/reticle.gltf'});
