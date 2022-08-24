@@ -17,10 +17,14 @@ body{
     
 }
 .content h1{
-    font-size: 65px;
+    font-size: 100px;
     font-weight: 600;
     color : #e9ecef;
     padding-bottom: 50px;
+}
+
+.content p{
+    font-size: 35px;
 }
 
 .cont_row {
@@ -45,8 +49,12 @@ body{
     text-align: center;
     font-weight: 600;
     margin-top: 10px;
-    font-size: 30px;
+    font-size: 75px;
     text-decoration: none;
+}
+
+.cont_col p{
+    font-size: 30px;
 }
 
 .cont_col img{
