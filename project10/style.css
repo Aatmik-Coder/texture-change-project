@@ -72,7 +72,7 @@ body{
         padding-bottom: 20px;
     }
     .cont_col img{
-        height: 800px;
+        height: 45vh;
         width : 30vh; 
     }
 }
