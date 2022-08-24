@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-a:link, a:visited {
-  background-color: #f44336;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-a:hover, a:active {
-  background-color: red;
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" >
 </head>
 <body>
 
-<h2>Other Markerless AR</h2>
-
-<a href="microwave/index.html" >Microwave</a>
-<a href="cooker/index.html" >Cooker</a>
-<a href="fridge/index.html" >Fridge</a>
-
+<section class="content">
+  <h1>
+      Markerless AR
+  </h1>
+  <p style="color: #e9ecef;">
+      This site is a collection of different Augumented Reality apps.
+      <br>
+  </p>
+  <div class="cont_row">
+      
+      <div class="cont_col" id="cont_col1">
+           <h3>
+               Microwave
+           </h3>
+           <p>
+               This app will display a Microwave in space .
+           </p>
+           <img src="microwave/poster.webp">
+      </div>
+      <div class="cont_col" id="cont_col2">
+          <h3>
+               Cooker
+          </h3>
+          <p>
+            This app will display a Cooker in space .
+          </p>
+          <img src="cooker/poster.webp">
+     </div>
+     <div class="cont_col" id="cont_col3">
+      <h3>
+              Fridge
+      </h3>
+      <p>
+        This app will display a Fride in space .
+      </p>
+      <img src="fridge/poster.webp">
+ </div>
+  </div>
+</section>
+<script src="script.js"></script>
 </body>
 </html>
 
