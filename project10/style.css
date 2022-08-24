@@ -71,4 +71,8 @@ body{
     .cont_col{
         padding-bottom: 20px;
     }
+    .cont_col img{
+        height: 800px;
+        width : 30vh; 
+    }
 }
