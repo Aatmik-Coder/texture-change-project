@@ -9,3 +9,7 @@ document.getElementById('cont_col2').addEventListener('click', function() {
 document.getElementById('cont_col3').addEventListener('click', function() {
     location.href = 'fridge/index.html'
 }, false);
+
+document.getElementById('cont_col4').addEventListener('click', function() {
+    location.href = 'architect/index.html'
+}, false);
