@@ -11,7 +11,18 @@
   </head>
   <body>
     <!-- <model-viewer> HTML element -->
-    <model-viewer src="bathroom_interior.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+    <model-viewer src="bathroom_interior.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" camera-orbit="361.6deg 87.7deg auto">
+      <button class="Hotspot" slot="hotspot-1" data-position="0.5139906098992673m 0.5325458876493068m -0.08389620125431574m" data-normal="-0.010498447378169991m -0.9204951607580368m 0.390612905091068m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Bathtub</div>
+      </button><button class="Hotspot" slot="hotspot-2" data-position="-1.892841504824666m 0.44049927498521996m 1.0714564530747113m" data-normal="0.014434240308670718m -0.9078047291405307m 0.4191446366790339m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Toilet</div>
+      </button><button class="Hotspot" slot="hotspot-3" data-position="-1.5604120907546066m 1.8531079044158125m -0.18292713165283203m" data-normal="0m 0m 1m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Shower</div>
+      </button><button class="Hotspot" slot="hotspot-4" data-position="2.50073490164025m 1.77884594959159m 0.7581809712421173m" data-normal="-0.9999999999997506m 2.472743542098513e-9m 7.062185754653543e-7m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Mirror</div>
+      </button><button class="Hotspot" slot="hotspot-5" data-position="1.9912770784318634m 0.8857266306877136m 1.2329965211148006m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Wash Basin</div>
+      </button>
       <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
       </div>
