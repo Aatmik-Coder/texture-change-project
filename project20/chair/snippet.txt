@@ -1,4 +1,4 @@
-<model-viewer src="arm_chair__furniture.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+<model-viewer src="arm_chair__furniture.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0" shadow-softness="0">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
