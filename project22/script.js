@@ -7,7 +7,7 @@ document.getElementById('cont_col2').addEventListener('click', function() {
 }, false);
 
 document.getElementById('cont_col3').addEventListener('click', function() {
-    location.href = 'n3/index.html'
+    location.href = 'n4/index.html'
 }, false);
 document.getElementById('cont_col4').addEventListener('click', function() {
     location.href = 'n5/index.html'
