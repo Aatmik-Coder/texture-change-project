@@ -11,8 +11,9 @@
   </head>
   <body>
     <!-- <model-viewer> HTML element -->
-    <model-viewer id="shadow-intensity-demo" touch-action="pan-y" shadow-intensity="2" shadow-softness="0" src="CHAIR.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
-      
+    <model-viewer id="neutral-demo"  src="CHAIR.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+      <label for="neutral">Neutral Lighting: </label>
+  <input id="neutral" type="checkbox" checked="true">
       <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
       </div>
@@ -23,20 +24,17 @@
           <img src="ar_hand_prompt.png">
       </div>
     </model-viewer>  
-    
-      <script>
-        (() => {
-          const modelViewer = document.querySelector('#shadow-intensity-demo');
-          const time = performance.now();
+    <script>
+      (() => {
+        const modelViewer = document.querySelector('#neutral-demo');
+        const checkbox = document.querySelector('#neutral');
         
-          const animate = (now) => {
-            modelViewer.shadowIntensity = oscillate(0, 2, 4000, now - time);
-            requestAnimationFrame(animate);
-          };
-        
-          animate();
-        })();
-        </script>
+        checkbox.addEventListener('change',() => {
+          modelViewer.environmentImage = checkbox.checked ? '' : 'legacy';
+        });
+      })();
+      </script>
+      
     <script src="script.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
