@@ -30,6 +30,8 @@
     <option value="./models/2K-Leather_22_Roughness.jpg" style="background-image:url(./models/2K-Leather_22_Roughness.jpg);">Texture 3</option>
     <option value="./models/Wood058_2K_Color.jpg" style="background-image:url(./models/Wood058_2K_Color.jpg);">Texture 4</option>
     <option value="./models/Wood058_2K_Roughness.jpg" style="background-image:url(./models/Wood058_2K_Roughness.jpg);">Texture 5</option>
+    <option value="./models/Texturemap.png" style="background-image:url(./models/Texturemap.png);">Texture 6</option>
+ 
   </select>
 
   <script>
@@ -51,7 +53,7 @@
           var finishName = colorSelector.options[colorSelector.selectedIndex].text;
           if (finishName === "Texture 1"){
             material.pbrMetallicRoughness.setRoughnessFactor(0.8);
-            material.pbrMetallicRoughness.setMetallicFactor(1.0);
+            material.pbrMetallicRoughness.setMetallicFactor(0.0);
           }
           else if (finishName === "Texture 2"){
             material.pbrMetallicRoughness.setRoughnessFactor(0.0);
@@ -71,7 +73,12 @@
           {
             material.pbrMetallicRoughness.setRoughnessFactor(0.5);
             material.pbrMetallicRoughness.setMetallicFactor(0.0);
-          }      
+          }  
+          else if (finishName === "Texture 6")
+          {
+            material.pbrMetallicRoughness.setRoughnessFactor(0.5);
+            material.pbrMetallicRoughness.setMetallicFactor(0.0);
+          }     
         });
   
       }
