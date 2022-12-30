@@ -1,5 +1,5 @@
 #color-controls{
-    height: 144px;
+    height: 44px;
     border: none;
     overflow: hidden;
   }
@@ -10,9 +10,9 @@
     outline: none;
   }
   #color-controls option{
-    width: 160px;
+    width: 60px;
     font-size: 1.2em;
-    padding: 40px 0;
+    padding: 10px 0;
     text-align: center;
     margin-right: 20px;
     display: inline-block;
