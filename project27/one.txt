@@ -1,81 +1,96 @@
-<model-viewer id="helmet" camera-controls touch-action="pan-y" src="../../shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF-Binary/DamagedHelmet.glb" ar alt="A 3D model of a helmet">
-  <div class="controls">
-    <div>
-      <p>Diffuse</p>
-      <select id="diffuse">
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF/Default_albedo.jpg">Damaged helmet</option>
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/Lantern/glTF/Lantern_baseColor.png">Lantern Pole</option>
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/WaterBottle/glTF/WaterBottle_baseColor.png">Water Bottle</option>
-      </select>
-    </div>
-    <div>
-      <p>Metallic-roughness</p>
-      <select id="metallicRoughness">
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF/Default_metalRoughness.jpg">Damaged helmet</option>
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/Lantern/glTF/Lantern_roughnessMetallic.png">Lantern Pole</option>
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/WaterBottle/glTF/WaterBottle_occlusionRoughnessMetallic.png">Water Bottle</option>
-      </select>
-    </div>
-    <div>
-      <p>Normals</p>
-      <select id="normals">
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF/Default_normal.jpg">Damaged helmet</option>
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/Lantern/glTF/Lantern_normal.png">Lantern Pole</option>
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/WaterBottle/glTF/WaterBottle_normal.png">Water Bottle</option>
-      </select>
-    </div>
-    <div>
-      <p>Occlusion</p>
-      <select id="occlusion">
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF/Default_AO.jpg">Damaged helmet</option>
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/WaterBottle/glTF/WaterBottle_occlusionRoughnessMetallic.png">Water Bottle</option>
-      </select>
-    </div>
-    <div>
-      <p>Emission</p>
-      <select id="emission">
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF/Default_emissive.jpg">Damaged helmet</option>
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/Lantern/glTF/Lantern_emissive.png">Lantern Pole</option>
-        <option value="../../shared-assets/models/glTF-Sample-Models/2.0/WaterBottle/glTF/WaterBottle_emissive.png">Water Bottle</option>
-      </select>
-    </div>
-  </div>
-</model-viewer>
-<script type="module">
-const modelViewerTexture1 = document.querySelector("model-viewer#helmet");
-
-modelViewerTexture1.addEventListener("load", () => {
-
-  const material = modelViewerTexture1.model.materials[0];
-
-  const createAndApplyTexture = async (channel, event) => {
-    const texture = await modelViewerTexture1.createTexture(event.target.value);
-    if (channel.includes('base') || channel.includes('metallic')) {
-      material.pbrMetallicRoughness[channel].setTexture(texture);
-    } else {
-      material[channel].setTexture(texture);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device=width, initial-scale=1.0">
+  <title>Texture Change</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@1.9.2/dist/model-viewer.min.js"></script><!---->
+ 
+  <style>
+    model-viewer{
+      width: 90%;
+      height: 512px;
+      margin: 0 auto;
+      padding: 10;
     }
-  }
+  </style>
+</head>
+<body>
+ 
+  <p>CHAIR</p>
+  <model-viewer id="speaker" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate src="./models/lambert chair glb.glb" onload="updateCol();">
+  <br>
+  <br>
+  <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; bottom: 16px; right: 16px; ">View in AR</button>
+  </model-viewer>  
+ 
+  <select class="controls" ,="" id="color-controls" onchange="updateCol();" >
+    <option value="./models/2K-Leather_22_Base Color.jpg">Texture 1</option>
+    <option value="./models/2K-Leather_22_Metallic.jpg">Texture 2</option>
+    <option value="./models/2K-Leather_22_Roughness.jpg" selected="selected">Texture 3</option>
+    <option value="./models/Wood058_2K_Color.jpg" >Texture 4</option>
+    <option value="./models/Wood058_2K_Roughness.jpg">Texture 5</option>
+  </select>
 
-  document.querySelector('#normals').addEventListener('input', (event) => {
-    createAndApplyTexture('normalTexture', event);
-  });
+  <script>
 
-  document.querySelector('#occlusion').addEventListener('input', (event) => {
-    createAndApplyTexture('occlusionTexture', event);
-  });
-
-  document.querySelector('#emission').addEventListener('input', (event) => {
-    createAndApplyTexture('emissiveTexture', event);
-  });
-
-  document.querySelector('#diffuse').addEventListener('input', (event) => {
-    createAndApplyTexture('baseColorTexture', event);
-  });
-
-  document.querySelector('#metallicRoughness').addEventListener('input', (event) => {
-    createAndApplyTexture('metallicRoughnessTexture', event);
-  });
-});
-
-</script>
+    const speakers = document.querySelectorAll("#speaker");
+    const speaker = document.querySelector("#speaker");      
+    const colorSelector = document.querySelector('#color-controls');    
+  
+    speaker.addEventListener("load", () => {
+  
+      const createAndApplyTexture = async (channel, event) => {
+        const texture = await speaker.createTexture(colorSelector.value);
+        
+        speakers.forEach(function(speaker){
+          const material = speaker.model.materials[0];
+          material.pbrMetallicRoughness[channel].setTexture(texture);
+          
+          
+          var finishName = colorSelector.options[colorSelector.selectedIndex].text;
+          if (finishName === "Texture 1"){
+            material.pbrMetallicRoughness.setRoughnessFactor(0.8);
+            material.pbrMetallicRoughness.setMetallicFactor(1.0);
+          }
+          else if (finishName === "Texture 2"){
+            material.pbrMetallicRoughness.setRoughnessFactor(0.0);
+            material.pbrMetallicRoughness.setMetallicFactor(0.0);
+          }
+          else if (finishName === "Texture 3")
+          {
+            material.pbrMetallicRoughness.setRoughnessFactor(0.8);
+            material.pbrMetallicRoughness.setMetallicFactor(0.1);
+          }
+          else if (finishName === "Texture 4")
+          {
+            material.pbrMetallicRoughness.setRoughnessFactor(0.0);
+            material.pbrMetallicRoughness.setMetallicFactor(1.0);
+          }
+          else if (finishName === "Texture 5")
+          {
+            material.pbrMetallicRoughness.setRoughnessFactor(0.5);
+            material.pbrMetallicRoughness.setMetallicFactor(0.0);
+          }      
+        });
+  
+      }
+  
+        
+      document.querySelector('#color-controls').addEventListener('input', (event) => {
+        createAndApplyTexture('baseColorTexture', event);
+      });
+  
+      speakers.forEach(function(speaker){
+        speaker.addEventListener('load', (event) => {
+          createAndApplyTexture('baseColorTexture', event);
+        });
+      });
+  
+      
+    });
+  
+    </script>
+  
+</body>
+</html>
