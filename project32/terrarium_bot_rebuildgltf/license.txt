@@ -1,0 +1,11 @@
+Model Information:
+* title:	Terrarium_Bot_Rebuild[gltf]
+* source:	https://sketchfab.com/3d-models/terrarium-bot-rebuildgltf-64d4f5289f46475681a1be47078cf927
+* author:	Rostenbach (https://sketchfab.com/Rostenbach)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Terrarium_Bot_Rebuild[gltf]" (https://sketchfab.com/3d-models/terrarium-bot-rebuildgltf-64d4f5289f46475681a1be47078cf927) by Rostenbach (https://sketchfab.com/Rostenbach) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
