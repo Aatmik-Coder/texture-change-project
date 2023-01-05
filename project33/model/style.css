@@ -34,7 +34,7 @@ body{
     margin-right: 20px;
     display: inline-block;
     cursor: pointer;
-    border:#e3d5ca solid 1px;
+    border:black solid 3px;
     border-radius: 50px;
     color: rgb(255, 255, 255);
     z-index: 1;
@@ -177,4 +177,22 @@ body{
   background-color: black;
   border-color: black;
   width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+.btn{
+  width: 0%;
+  display: none;
+  margin-left: 0%;
+}
+.op{
+  
+}
+#color-controls option{
+width: 100%;
+}
+
+#color-controls{
+width: 100%;
+}
 }
