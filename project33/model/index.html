@@ -69,15 +69,22 @@
   
   <div class="btn">
     
-    <button class="bun" slot="ar-button" >View in AR</button>
+    <button class="bun" id="bn" slot="ar-button" onclick="show()">View in AR</button>
     <br>
     <hr class="l1">
-    <img src="./qr-code.png" class="im" alt="QR">
+    <img src="./qr-code.png" id="ig" class="im" alt="QR">
   </div>
 </div>
 </div>
   <script>
+    function show() {
+ 
+ /* Access image by id and change
+ the display property to block*/
 
+ document.getElementById('ig')
+         .style.display = "inline";
+}
     const speakers = document.querySelectorAll("#speaker");
     const speaker = document.querySelector("#speaker");      
     const colorSelector = document.querySelector('#color-controls');    

@@ -163,6 +163,7 @@ body{
 .im{
   position: relative;
   height: 35%;
+  display: none;
   width: 80%;
   margin-top: 20%;
   z-index: 0;
